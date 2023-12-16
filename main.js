@@ -9,18 +9,26 @@ const phraseRandomizer = () => {
         ],
 
         partTwo: [
-            "successfully overcome many challenges",
-            "done an excellent job",
-            "reached a significant milestone"
+            "successfully overcome many challenges,",
+            "done an excellent job,",
+            "reached a significant milestone,"
         ],
 
         partThree: [
-            "here, take a raise",
+            "here, take a raise.",
             "you get nothing, HURRAY!",
-            "for your reward, you will have to fight me"
+            "as for your reward, you will have to fight me to death!."
         ]
-    }
-    return buildingPhrases
+    };
+    
+    //Building the phrase logic
+    const randomPhrase = {
+        partOne: buildingPhrases.partOne[Math.floor(Math.random() * buildingPhrases.partOne.length)],
+        partTwo: buildingPhrases.partTwo[Math.floor(Math.random() * buildingPhrases.partTwo.length)],
+        partThree: buildingPhrases.partThree[Math.floor(Math.random() * buildingPhrases.partThree.length)]
+    };
+    return randomPhrase;
 }
 
-const sentence = phraseRandomizer();
+const generatePhrase = phraseRandomizer();
+console.log(`${generatePhrase.partOne} ${generatePhrase.partTwo} ${generatePhrase.partThree}`);
